@@ -1,12 +1,11 @@
-PROksi
-======
-
+#PROksi
 PROksi-palvelun Wordpress-teeema ja lisäosat
 
-PROksin dokumentaatio asennus- ja käyttöohjeineen löytyy täältä: http://wiki.metropolia.fi/display/proksi/.
+**[PROksin dokumentaatio asennus- ja käyttöohjeineen löytyy täältä.](http://wiki.metropolia.fi/display/proksi/)**
 
 
-Mikä on PROksi?
+##Mikä on PROksi?
+
 PROksi on ilmainen ja avoin oppimisympäristö opiskelijaprojekteille, joka perustuu vahvasti vertaisoppimiseen. Alustan tarkoituksena on yhdistää opiskelija, opettaja ja työelämän edustajat monisuuntaiseen osaamisen ja tiedon jakoon. Projektit voivat olla opinnäytetöitä tai muita opiskelijaprojekteja.
 
 Työelämän edustajien on helppo osallistua jättämällä projektiaihe PROksin aihepankkiin. Projektin aihe voi olla omaa organisaatiota kehittävä. Aiheeseen tarttuva opikselija sopii opettajansa kanssa koulussa kuinka aihe saadaan sopimaan opintoihin.
