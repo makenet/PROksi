@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+
+.etappirivi{
+	border-bottom:1px solid #ddd;
+}
+.etappirivi td{
+	padding:5px;
+}
+.tehdyksi, .tehdyksi.form, .tehdyksi input{
+	width:101px;
+}
+.poista_etappi, .poista_etappi.form, .poista_etappi input{
+	width:47px;
+}
+.palauta, .palauta.form, .palauta input{
+	width:133px;
+}
+.etappi_tbl{
+	margin-bottom:40px;
+}
+h4.etappi_hdr{
+	text-transform: uppercase!important;
+	font-size: 12px!important;
+	margin-bottom:0;
+	text-shadow: 1px 1px 1px #eee;
+}
+.valmiit{ color:#306c30!important; }
+.kesken{ color:#b92b2b!important; }
+.eteneminen-kehys{
+	height:10px; 
+	width:150px; 
+	padding:2px;
+	margin:3px 5px 10px 0;
+	border:1px solid #cdcdcd;
+	padding:0;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	overflow:hidden;
+	background:#fff;
+}
+.eteneminen-prosentit{
+	height:10px; 
+	background:#D59A9A; 
+	display:block;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.lista-eteneminen-kehys{
+	display:block;
+	padding:2px;
+	margin:10px 5px;
+	border:1px solid #cdcdcd;
+	padding:0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow:hidden;
+	height:10px;
+	background:#fff;
+}
+
+.lista-eteneminen-prosentit{
+	height:10px; 
+	background:#D59A9A; 
+	display:block;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}

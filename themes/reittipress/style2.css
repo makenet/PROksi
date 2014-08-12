@@ -1,0 +1,2513 @@
+/*
+Theme Name: Reittipress
+Theme URI: 
+Description: Reitti theme inheriting BuddyPress.
+Version: 1.0
+Author: Markku Tähtinen
+Author URI: http://reititin.metropolia.fi
+Template: bp-default
+Tags: buddypress, two-column, grey, dark
+*/
+
+body{
+position:relative;
+width:100%!important;
+max-width:100%!important;
+min-width:100%!important;
+margin:0;
+background-color:#eaeaea!important;
+background: #eaeaea!important;
+background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VhZWFlYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM3JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2VhZWFlYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+background: -moz-linear-gradient(top,  #eaeaea 0%, #ffffff 37%, #eaeaea 99%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eaeaea), color-stop(37%,#ffffff), color-stop(99%,#eaeaea));
+background: -webkit-linear-gradient(top,  #eaeaea 0%,#ffffff 37%,#eaeaea 99%);
+background: -o-linear-gradient(top,  #eaeaea 0%,#ffffff 37%,#eaeaea 99%);
+background: -ms-linear-gradient(top,  #eaeaea 0%,#ffffff 37%,#eaeaea 99%);
+background: linear-gradient(to bottom,  #eaeaea 0%,#ffffff 37%,#eaeaea 99%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#eaeaea',GradientType=0 );
+font-family: "Lucida Grande", Arial, Tahoma, Verdana, sans-serif;
+}
+h3, h2, h2 a{
+	font-family: 'Oswald', sans-serif;
+	font-weight:normal!important;
+	font-size:24px;
+}
+h3{
+	margin:20px 0 30px;
+	font-size:18px;
+}
+
+div#container{
+	/*padding-bottom:304px!important;*/
+}
+#container, #content{
+	background:transparent!important;
+	border:none!important;
+}
+
+#container, #content, .padder{
+	-moz-border-radius: 0!important;
+	-webkit-border-radius: 0!important;
+	border-radius: 0!important;
+}
+#content{ /*sidebarin taustaväri*/
+	background:#eaeaea;
+	height:100%;
+}
+div#content div.padder{
+	border-right:none!important;
+	padding-bottom:0!important;
+	min-height:800px;
+	margin-left: 0px;
+	margin-top: 10px;
+	margin-right: 275px;
+	background:#fff;
+	height:100%;
+}
+div.pagination{
+	background:#fff;
+	position:static!important;
+}
+.clear{
+	clear:both;
+}
+a, a:visited{
+	color:#56768e;
+	font-weight:bold;
+}
+div.item-list-tabs ul li a span {
+	background: #56768e;
+}
+div.item-title a{
+	text-decoration:none;
+	font-weight:bold;
+	color:#888;
+}
+div.item-title a:hover{
+	color:#555;
+}
+div.item-body{
+	padding-bottom:10px;
+}
+#footer{
+	width:100%;
+	display:block;
+	background: #d1d1d1;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2QxZDFkMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjNWM1YzUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjN2RiOWU4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+	background: -moz-linear-gradient(top,  #d1d1d1 0%, #c5c5c5 100%, #7db9e8 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d1d1d1), color-stop(100%,#c5c5c5), color-stop(100%,#7db9e8));
+	background: -webkit-linear-gradient(top,  #d1d1d1 0%,#c5c5c5 100%,#7db9e8 100%);
+	background: -o-linear-gradient(top,  #d1d1d1 0%,#c5c5c5 100%,#7db9e8 100%);
+	background: -ms-linear-gradient(top,  #d1d1d1 0%,#c5c5c5 100%,#7db9e8 100%);
+	background: linear-gradient(to bottom,  #d1d1d1 0%,#c5c5c5 100%,#7db9e8 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d1', endColorstr='#c5c5c5',GradientType=0 );
+	padding:0!important;
+	margin:0!important;
+}
+#footer-container{
+	width:100%;
+	max-width:1100px;
+	margin:0 auto;
+}
+.footer-left{
+	padding:40px 0;
+	display:block;
+	background:#c5c5c5;
+	margin-right: 275px;
+}
+.ie #footer-container{
+	width:1100px;
+}
+#footer img{
+	display:block;
+	margin:10px auto;
+	width:100%;
+	max-width:600px;
+	height:auto;
+	max-height:53px;
+}
+.ie6 #footer img{
+	width:600px;
+}
+.own-groups-link{
+	display:none;
+}
+
+.viiva{
+	display:block;
+	height:1px;
+	border-bottom:1px solid #ddd;
+}
+/*-----------------------------------------------------------------------
+	Admin bar
+------------------------------------------------------------------------*/
+#wp-admin-bar{
+	position: fixed!important;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	height: 25px;
+	font-size: 10px;
+	text-transform:uppercase;
+	font-weight:bold;
+	width: 100%;
+	z-index: 1000;
+
+}
+
+#wp-admin-bar .padder {
+	min-width: 100%!important;
+	max-width: 100%!important;
+	background-image:none!important;
+	background-color:#888;
+}
+.ie6 #wp-admin-bar .padder {
+	width: 100%!important;
+}
+#bp-adminbar-visitrandom-menu{
+	display:none!important;
+}
+/*#bp-adminbar-account-menu{ Näillä tili-valikko oikeeseen reunaan
+	float:right!important
+}
+#bp-adminbar-account-menu ul{
+	position:absolute;
+	right:0;
+}
+#bp-adminbar-account-menu ul ul{
+	position:absolute;
+	right:184px;
+}*/
+#bp-adminbar-notifications-menu ul li a{
+	text-transform:none;
+	font-weight:none;
+}
+li#bp-adminbar-thisblog-menu{
+	display:none!important;
+}
+#admin-bar-logo{
+	text-transform:none!important;
+}
+#wp-admin-bar .padder {
+	width: 980px!important; /* Line up the admin bar with the content body in this theme */
+	margin:0 auto;
+}
+li#bp-adminbar-notifications-menu a span{
+	background: #FF7F00!important;
+	font-weight: bold!important;
+	color: white!important;
+}
+
+/*-----------------------------------------------------------------------
+	Header
+------------------------------------------------------------------------*/
+/*#header{
+	width:100%!important;
+	-moz-border-radius-bottomleft: 0;
+	-webkit-border-bottom-left-radius: 0;
+	border-bottom-left-radius: 0;
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-bottom-right-radius: 0;
+	border-bottom-right-radius: 0;
+	background-image:none;
+	background: #ddd;
+	background: linear-gradient(bottom, rgb(207,207,207) 0%, rgb(247,247,247) 100%);
+	background: -o-linear-gradient(bottom, rgb(207,207,207) 0%, rgb(247,247,247) 100%);
+	background: -moz-linear-gradient(bottom, rgb(207,207,207) 0%, rgb(247,247,247) 100%);
+	background: -webkit-linear-gradient(bottom, rgb(207,207,207) 0%, rgb(247,247,247) 100%);
+	background: -ms-linear-gradient(bottom, rgb(207,207,207) 0%, rgb(247,247,247) 100%);
+	margin-bottom: 0px;
+	-webkit-box-shadow: 0px 5px 20px rgba(50, 50, 50, 0.31);
+	-moz-box-shadow: 0px 5px 20px rgba(50, 50, 50, 0.31);
+	box-shadow: 0px 5px 20px rgba(50, 50, 50, 0.31);
+	border-bottom: 1px solid #BBB;
+	padding:0;
+	position:fixed;
+	top:27px;
+	z-index:10000;
+} MÄÄRITTELYITÄ LEVEYSKOHDASSA*/
+#header{
+	width:100%!important;
+	-moz-border-radius-bottomleft: 0;
+	-webkit-border-bottom-left-radius: 0;
+	border-bottom-left-radius: 0;
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-bottom-right-radius: 0;
+	border-bottom-right-radius: 0;
+	background-image:none;
+	background: #fff;
+	margin-bottom: 0px;
+	border-bottom: 1px solid #dadada;
+	padding:0;
+	position:fixed;
+	top:27px;
+	z-index:10000;
+}
+
+.ie6 #header, .ie7 #header, .ie8 #header, .ie9 #header{
+	position:static!important;	
+	background:url('http://proksi.metropolia.fi/images/nav-tausta.jpg') repeat-x;
+}
+
+.header_container{
+	height:1px;
+	position:relative;
+}
+#navigation{
+	position:static!important;F
+}
+#nav{
+	margin-top:0px;
+	margin-left:20px;
+	float:left;important;
+	/*border-left:117px solid #ccc;*/
+}
+#wp-admin-bar-root-default{
+	display:none;
+}
+#ab-pending-notifications{
+	background-color:#FF7F00;
+}
+.page_item a, .current_page_item a, #nav li a{
+	/*font-weight:bold;*/
+	color:#888;
+	font-weight:normal;
+
+	/* text-shadow:1px 1px 1px #fff;*/
+	background:#eaeaea;
+}
+#nav li.selected a, #nav > li.current-menu-item a, #nav > li.current_page_item a, #nav > li.current_page_ancestor a{
+	background: #fff;
+}
+#nav li a:hover{
+	color:#555;
+}
+#nav li, #nav li a{
+	font-family: 'Oswald', sans-serif;
+	height:60px;
+	line-height:60px;
+	/*min-width:100px;*/
+	margin:0;
+	background:none;
+}
+.ie6 #nav li,  .ie7 #nav li{
+	width:130px;
+	float:left;
+}
+.ie6 #nav li:last-child, .ie7 #nav li:last-child{
+	clear:left;
+}
+/*#nav li a{
+	padding:0 15px;
+	text-align:center;
+	border-right:1px solid #ccc;
+	-moz-border-radius: 0!important;
+	-webkit-border-radius: 0!important;
+	border-radius: 0!important;
+	font-size:16px;
+	text-transform:uppercase;
+}*/
+#nav li a{
+	padding:0 5px;
+	text-align:center;
+	-moz-border-radius: 0!important;
+	-webkit-border-radius: 0!important;
+	border-radius: 0!important;
+	font-size:16px;
+	text-transform:uppercase;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+#nav li.selected a,
+#nav > li.current-menu-item a,
+#nav > li.current_page_item a,
+#nav > li.current_page_ancestor a {
+	color: #555;
+	border-bottom: 3px solid #5a5a5a;
+}  
+#search-bar{
+	display:none; /* disabloitu toistaiseksi */
+	position:relative;
+	top:0px;
+	max-width:400px;
+	float:right;
+	z-index:11;
+}
+.ie6 #search-bar{
+	width:400px;
+}
+.activity-type-tabs{
+	margin-top:0;
+}
+/*#proksi_logo{
+	height:60px;
+	width:131px;
+	position:absolute;
+	top:0;
+	left:-15px;
+	z-index:11111;
+	background:url('http://proksi.metropolia.fi/images/pikkulogo.jpg') no-repeat;
+}*/
+#proksi_logo{
+	height:60px;
+	width:120px;
+	z-index:11111;
+	float:left;
+}
+#metropolia_logo{
+	height:40px;
+	padding:5px 0;
+	position:absolute;
+	top:5px;
+	right:20px;
+	z-index:11;
+}
+#metropolia_logo img{
+	height:100%;
+	width:auto;
+}
+.page-item-53 .children, .page-item-14 .children{
+	display:none!important;
+}
+
+/*---------------------------------------------------------------------------
+	Leveys
+---------------------------------------------------------------------------*/
+/*.header_container, #navigation{
+	max-width: 1100px!important;
+	margin: 0 auto!important;
+	width: 100%!important;
+	text-align:left;
+	min-width:800px;
+}*/
+header_container, #navigation{
+	margin: 0 auto!important;
+	width: 100%!important;
+	text-align:left;
+	min-width:800px;
+}
+#container{
+	position:relative;
+	width: 100%!important;
+	max-width: 1100px!important;
+	text-align:left;
+	min-width:800px;
+	margin:60px auto 0 auto!important;
+	/* border:1px solid #ccc!important;*/
+}
+
+
+.ie .header_container, .ie #container, .ie #navigation, .ie .header_container, .ie #container, .ie #navigation{
+	width: 1100px;
+	margin: 0 auto!important;
+	text-align:left;
+}
+
+/*-----------------------------------------------------------------------
+	etusivu
+-------------------------------------------------------------------------*/
+#proksi-front-page-container, #proksi-etusivu-header, #proksi-etusivu-aihepankki, #proksi-etusivu-projektit{
+	width:100%;
+}
+#proksi-etusivu-header{
+	clear:both;
+	display:block;
+	background:#9a9a9a;
+	border-bottom:1px solid #dadada;
+	margin-top:60px;
+	min-height:245px;
+	overflow:hidden;
+	color:#fff;
+}
+#proksi-etusivu-header a{
+	color:#fff;
+}
+.proksi-etusivu-header-wrap{
+	width:100%;
+	max-width:960px;
+	margin:0 auto;
+	padding:50px 0;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+.tyypit{
+	float:right;
+	width:320px;
+	max-width:33%;
+	position:relative;
+	margin-left:20px;
+	/*background:url("../../../images/tyypit.png");*/
+}
+.tyypit img{
+	float:right;
+}
+.slogan{
+	font-family: 'Droid Serif', serif;
+	font-size:45px;
+	line-height:50px;
+	margin:0 0 10px 0;
+}
+.slogan-info{
+	max-width:66%;
+}
+.proksi-etusivu-header-wrap p{
+	font-family: 'Droid Serif', serif;
+	font-size:20px;
+	line-height:25px;
+	margin:0 0 10px;
+}
+.kirjautuminen form{
+	margin-bottom:10px;
+}
+.kirjautuminen .fbLoginButton{
+	margin-top:20px;
+}
+.kirjautuminen .widget-title{
+	display:none;
+}
+.kirjautuminen #wp-submit{
+	padding:0 10px!important;
+	min-width:100px;
+	height:30px;
+	font-size:14px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	padding:3px 15px;
+}
+.kirjautuminen .widget_autoconnect_premium #user_login, .kirjautuminen .widget_loginlogout #user_pass, .kirjautuminen .widget_autoconnect_premium #user_pass, .kirjautuminen .widget_loginlogout #user_login{
+	width:100%;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+	height:30px;
+
+}
+.kirjautuminen .widget_loginlogout #wp-submit, .kirjautuminen .widget_autoconnect_premium #wp-submit{
+	margin: 7px 10px 0 0!important;
+}
+.kirjautuminen #forgotText{
+	margin-left:0!important;
+}
+	
+.ie .otsake{
+	margin-top:0;
+	margin-bottom:0;
+}
+.otsake h2{
+	font-size:28px;
+	color:#fff;
+}
+.otsakelogo{
+	height:100%;
+	float:left;
+	max-width:202px;
+	position:absolute;
+	top:0;
+	left:-60px;
+}
+.otsake-info{
+	float:right;
+	width:33%;
+	height:100%;
+	margin:0;
+	padding:40px 10px 0;
+	box-sizing:border-box:
+	-webkit-box-sizing:border-box;
+	font-size:12px;
+	line-height:16px;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 16px;
+	position:relative;
+}
+.otsake-info img{
+	position:absolute;
+	left:0px;
+}
+.otsake-info h2{
+	margin-bottom:10px;
+}
+.otsake-lyhyt-info{
+	font-family: 'Questrial', sans-serif;
+	font-size:18px;
+	line-height: 20px;
+	margin: 0;
+	padding:70px 10px 0 15%!important;
+	position:relative;
+	width:40%;
+}
+.ie .otsake-lyhyt-info{
+	width:40%;
+	position:absolute;
+}
+#proksi-etusivu-aihepankki{
+	clear:both;
+	display:block;
+	min-height:300px;
+	background:#fafafa;
+	border-bottom:1px solid #dadada;
+}
+#proksi-etusivu-projektit{
+	clear:both;
+	display:block;
+	min-height:300px;
+	background:#eaeaea;
+}
+.etusivu-centered{
+	clear:both;
+	width:100%;
+	max-width:980px;
+	margin:0 auto;
+	padding:40px 20px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.etusivu-centered h2{
+	margin-bottom:20px;
+	text-transform:uppercase;
+	font-size:18px;
+}
+.etusivu-centered h2 span{
+	color:#6C3;
+	font-size:#12px!important;
+}
+.uudet-aiheet-oikea{
+	float:right;
+	width:100%;
+	max-width:33%;
+}
+.uudet-aiheet{
+	margin-right:33%;
+	padding-right:20px;
+}
+.aihe-icon img{
+	float:left;
+	margin-top:5px;
+}
+.etusivu-aihe{
+	display:block;
+	margin-bottom:10px;
+	margin-left:50px;
+	min-height:40px;
+}
+.etusivu-aihe a{
+	text-decoration:none;
+}
+.etusivu-aihe span{
+	display:block;
+}
+.etusivu-ap-organisaatio{
+	font-size: 11px;
+	text-transform: uppercase;
+	color: #333;
+}
+.etusivu-ap-otsikko{
+	font-size: 14px;
+	color: #555;
+}
+.etusivu-ap-alat{
+	font-size: 11px;
+	color:#888;
+}
+.etusivu-aihe a:hover{
+	color:#aaa!important;
+}
+#proksi-front-page-container .footer-left{
+	margin-right:0;
+}
+.uudet-aiheet-oikea
+a.ehdota, .uudet-aiheet-oikea a.ehdota:visited{
+	display:block; 
+	padding:20px;
+	background:#91d835!important;
+	color:#fff;
+	text-align:center;
+	font-size:20px;
+}
+.ehdota, .ehdota:hover{
+	background:#cacaca;
+	color:#fff!important;
+}
+.uudet-aiheet-oikea p{
+	font-family: 'Droid Serif', serif;
+	font-size:16px;
+	line-height:20px;
+	margin-top:20px;
+}
+/*---------------------------------------------------------------------------
+	sidebar
+---------------------------------------------------------------------------*/
+div#sidebar{
+	margin-left:-266px;
+	width:266px;
+	border-left:none;
+	background:#ddd;
+	margin-top: 10px;
+	min-height:100%;
+	z-index: 99999;
+}
+
+div#sidebar a{
+	color:#000;
+	font-weight:bold;
+	text-decoration:none;
+}
+div#sidebar h3.widgettitle{
+	background:#555;
+	color:#fff;
+	font-size:16px;
+	margin:25px -21px 10px -20px;
+	text-transform:uppercase;
+}
+.ie6 div#sidebar{
+	float:left;
+	margin:0!important;
+	background:none;
+}
+.ie6 div#sidebar .padder{
+	width:225px;
+}
+.ie6 div#sidebar h3{
+	margin-left:0;
+	margin-right:0;
+}
+/*-----------------------------------
+	LOGIN
+-----------------------------------*/
+#login-text{
+	margin-top:10px;
+}
+#login-text a, #login-text a:visited{
+	color:#AF4921!important;
+	text-decoration:underline!important;
+}
+.login{
+	background-color:#fbfbfb;
+	border-bottom:1px solid #ccc;
+}
+#login{
+	width:370px;
+	background-color:#eaeaea!important;
+	padding: 30px 20px 30px 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#login #nav{
+	margin:0!important;
+	border:none!important;
+	text-align:center;
+	float:none;
+}
+#login #backtoblog{
+	display:none;
+}
+#login #facebook-btn-wrap{
+	margin-bottom:20px;
+}
+#login h1 a{
+	background:url("/images/proksi-logo.png") no-repeat!important;
+	width: 100%;
+	height: 110px;
+}
+#sidebar .forgetmenot{
+	margin-bottom:0;
+}
+#sidebar .standard-form{
+	padding-bottom:15px;
+}
+#sidebar .fbLoginButton{
+	margin:0 -20px 0 -19px;
+	padding:17px 20px 20px;
+	background:#fff;
+}
+
+
+
+/*---------------------------------------------------------------------------
+	etusivuinfo
+---------------------------------------------------------------------------*/
+div#front-page-info{
+	display:none;
+	width:100%;
+	max-width:723px;
+	min-width:700px;
+	margin:10px auto 30px;
+	font-size:14px;
+	padding:10px 0 10px 30px;
+}
+.ie6 div#front-page-info{
+	width:723px;
+}
+div#front-page-info h1{
+	font-family:verdana, arial;
+	font-size:28px;
+	font-weight: 700;
+	text-shadow:1px 1px 1px #fff;
+	text-align:center;
+	margin-bottom:35px;
+	position:relative;
+	right:10px;
+}
+div#front-page-info h2{
+	font-size:20px;
+	font-weight: 700;
+	text-shadow:1px 1px 1px #fff;
+	margin:15px 0 10px;
+}
+div#front-page-info .info-kategoria{
+	margin-right:0px!important;
+	width:33.333333333333%!important;
+}
+div#front-page-info .info-kategoria *{
+	max-width:211px!important;
+}
+
+
+/*---------------------------------------------------------------------------
+	Omat ryhmät
+----------------------------------------------------------------------------*/
+#bp_my_groups_widget-3{
+	background:transparent!important;
+	border:none!important;
+}
+ul.my-groups-list .item{
+	width:100%;
+}
+ul.my-groups-list li div.item-title, ul.item-list li h4 {
+	font-weight: normal;
+	font-size: 14px;
+	margin: 0;
+	width:100%!important;
+}
+.my-groups-list{
+	margin:-10px -18px 0 -19px;
+	width:265px!important;
+}
+.my-groups-list .item{
+	display:table-cell;
+	
+}
+.my-groups-list .item .item-title{
+	margin-top:3px;
+	padding-top:0;
+}
+.my-groups-list .item a{
+	text-decoration:none;
+	display:block;
+	width:100%;
+	height:100%;
+	color:#333;
+}
+.my-groups-list li{
+	padding:5px 10px!important;
+	border-bottom:1px solid #ccc!important;
+	min-height:25px;
+}
+.my-groups-list li:hover{
+	background:#f5f5f5;
+}
+li.lisaa{
+	padding-bottom:0!important;
+	font-size:10px;
+	color:#888;
+}
+.widget_bp_my_groups_widget h4{
+	margin-left:-10px!important;
+	margin-top:15px;
+	font-size:11px!important;
+	text-transform:uppercase;
+	color:#333;
+	margin-bottom:0;
+}
+.jasen, .omat{
+	margin-top:0px!important;
+	border-top:1px solid #bbb;
+}
+
+/*---------------------------------------------------------------------------
+	Info
+----------------------------------------------------------------------------*/
+.info-wrapper{
+	margin-bottom:10px;
+	padding:10px;
+	border:1px solid #ccc;
+	background:#f0f0f0;
+}
+.info-kategoria{
+	margin-right:10px;
+	float:left;
+	width:31.39318885448917%;
+	display:block;
+}
+.info-kategoria h2{
+	font-size:18px;
+}
+/*------------------------------------------------------------------------------
+	Activity
+-------------------------------------------------------------------------------*/
+div.activity{
+	margin:-10px -19px 0 -20px;
+}
+.no-ajax .activity-content{
+	background-color:transparent!important;
+	border:1px solid #ddd;
+}
+.no-ajax .activity-content p{
+	background-image:none!important;
+}
+div.activity-header{
+	border-bottom:1px solid #ddd;
+	padding-bottom:5px;
+	margin-right:50px;
+}
+
+li.mini div.activity-content div.activity-header{
+	border-bottom:none;
+	margin-bottom:0!important;
+}
+div.activity-header p img.avatar{
+	height:20px!important;
+	width:20px!important;
+}
+div.activity-comments{
+	margin-bottom:15px;
+}
+div.activity-comments ul{
+	padding:0;
+	background:none;
+}
+div.activity-comments ul li{
+	background:#f5f5f5;
+	background-image:none!important;
+	padding:10px!important;
+	border: 1px solid #ddd;
+	border-top:1px solid #ddd!important;
+	margin-bottom:5px;
+}
+ul#activity-stream.activity-list li{
+	background-image: linear-gradient(bottom, rgb(255,255,255) 4%, rgb(255,255,255) 76%, rgb(246,247,249) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(255,255,255) 4%, rgb(255,255,255) 76%, rgb(246,247,249) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 4%, rgb(255,255,255) 76%, rgb(246,247,249) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 4%, rgb(255,255,255) 76%, rgb(246,247,249) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 4%, rgb(255,255,255) 76%, rgb(246,247,249) 100%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.04, rgb(255,255,255)),
+		color-stop(0.76, rgb(255,255,255)),
+		color-stop(1, rgb(246,247,249))
+	);
+	padding:20px 20px 5px;
+	border-bottom:1px solid #ddd!important;
+}
+
+ul#activity-stream.activity-list .mini{
+	background-image:none;
+	background:transparent!important;
+	border:none!important;
+	padding-top:10px!important;
+	padding-bottom:1px;
+}
+
+ul#activity-stream.activity-list .mini .activity-content{
+	margin-bottom:0;
+}
+ul#activity-stream.activity-list .mini .activity-content .activity-header{
+	margin-bottom:10px;
+}
+
+ul#activity-stream.activity-list .mini div.activity-comments ul li{
+	background:#fff!important;
+}
+
+ul#activity-stream.activity-list li.joined_group div.activity-content div.activity-meta{
+	margin:0!important;
+}
+ul#activity-stream.activity-list li.joined_group div.activity-content div.activity-meta a.acomment-reply, 
+ul#activity-stream.activity-list li.joined_group div.activity-content div.activity-meta a.fav{
+	display:none!important;
+}
+
+div.item-list-tabs {
+	background: white;
+	margin: 15px -18px 20px -20px;
+	overflow: hidden;
+	border-bottom:1px solid #dfdfdf;
+}
+div#subnav{
+	border-bottom:2px solid #eaeaea!important;
+}
+div#subnav a, div#subnav a:visited{
+	color:#555;
+}
+div#subnav a:hover{
+	color:#888;
+}
+li.feed a, li.feed a:visited{
+	color:#555!important;
+}
+div#subnav.item-list-tabs.no-ajax {
+	margin-bottom:10px;
+}
+div.item-list-tabs ul li:first-child {
+	margin-left: 20px;
+}
+div.item-list-tabs ul li.selected{
+	border-bottom:4px solid #ddd;
+}
+div.item-list-tabs ul li{
+	margin-right:10px;
+}
+div.item-list-tabs ul li a{
+	padding: 5px 0;
+}
+div.item-list-tabs ul li.selected a{
+	color:#555;
+}
+div.item-list-tabs ul li.selected a span{
+	background-color:#888;
+}
+div#subnav ul li a{
+	font-size:12px;
+}
+div#subnav{
+	min-height:34px!important;
+}
+.activity-list li.load-more{
+	margin:0!important;
+	padding:0!important;
+}
+li.load-more a{
+	text-decoration:none;
+	display:block;
+	width:100%;
+	height:100%;
+	line-height:40px;
+}
+li.load-more a:hover{
+	background:#f8f8f8;
+	color:#555;
+}
+.bpfb_form_container{
+	margin:0 -40px!important; 
+	padding:0 40px!important;
+	background-color:transparent!important;
+}
+/*#item-body form#whats-new-form {
+	margin: 20px -20px 10px;
+	padding: 0 20px;
+}*/
+.friendship_created .activity-avatar{
+	position:absolute;
+	left:0;
+	top:5px;
+}
+.friendship_created .activity-content .avatar{
+	position:absolute;
+	left:-45px;
+	top:10px;
+}
+.mini .activity-meta{
+	margin:0;
+}
+.mini .acomment-reply, .mini .fav, .mini .activity-comments{
+	display:none;
+}
+.mini .delete-activity{
+	position:absolute;
+	right:0;
+	top:0px;
+}
+div.activity-comments ul li > ul {
+	margin-left: 0px!important;
+	margin-top: 0;
+	padding-left: 0px!important;
+}
+.activity-avatar a img{
+	max-width:40px!important;
+	max-height:40px!important;
+}
+#proksi-group-content .activity-list li.mini .activity-avatar img.avatar, #proksi-group-content .activity-list li.mini .activity-avatar img.FB_profile_pic {
+	margin-left: 0!important;
+}
+/*------------------------------------------------------------------------------
+	Projektilista
+-------------------------------------------------------------------------------*/
+/*#groups-list .item{
+	margin-left:64px!important;
+	margin-right:140px;
+}*/
+#groups-dir-list{
+	margin-left:20px;
+	padding-top:28px;
+}
+#groups-list .item-desc{
+	margin-left:0;
+}
+div#item-header div#item-meta{
+	color:#888!important;
+}
+.projektikorttiwrap {
+	width: 25%!important;
+	float: left;
+	height: 315px;
+	padding:0!important;
+	margin-bottom:20px;
+	border-bottom:none!important;
+}
+.projektikortti {
+	display:block;
+	padding:0;
+	margin-right:20px;
+	border: 1px solid #cdcdcd;
+	border-bottom:none;
+	height:100%;
+	background:#fafafa;
+	margin-bottom:-32px;
+	overflow:hidden;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.projektikortti-inner-wrap {
+	height:283px;
+	display:block;
+	overflow:hidden;
+}
+.korttipush{
+	height:32px;
+	clear:both;
+}
+.projektikortti-footer {
+	display:block;
+	margin-right:20px;
+	height:32px;
+	border:1px solid #cdcdcd;
+	background:#eaeaea;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.projektikortti-footer .group-button{
+	margin-top:20px!important;
+}
+.projektikortti .item{
+	margin-right:0!important;
+	padding:0 10px;
+	line-height:15px!important;
+	max-height:800px;
+	overflow-y:hidden;
+}
+.projektikortti .action {
+	position:static!important;
+	text-align:left!important;
+	padding:0 10px;
+}
+.projektikortti-otsikko, .projektikortti-otsikko a{
+	display:block;
+	text-decoration:none;
+	color:#000!important;
+	margin-bottom:5px;
+	max-height:60px;
+	overflow:hidden;
+	padding-top:10px;
+}
+.projektikortti .item-desc{
+	margin-top:0!important;
+}
+.projektikortti .item-avatar{
+	max-height:171px;
+	overflow:hidden;
+	margin:0;
+}
+.projektikortti img{
+	width:100%!important;
+	height:auto!important;
+	border:none!important;
+	border-bottom:1px solid #cdcdcd!important;
+	margin-bottom:10px!important;
+}
+.projektiadminit{
+	display:block;
+	font-size:10px; 
+	font-weight:bold; 
+	text-transform:uppercase;
+	color:#888;
+	line-height:15px;
+	max-height: 30px;
+	overflow: hidden;
+}
+.pagination{
+	background:transparent!important;
+}
+
+/*------------------------------------------------------------------------------
+	Projekti
+-------------------------------------------------------------------------------*/
+div.plus-group-header a{
+	font-weight:normal;
+}
+div.plus-group-header{
+	margin-bottom:10px;
+}
+div#item-header{
+	margin:0 -20px;
+	padding:20px;
+	border-bottom:1px solid #eaeaea;
+}
+div#item-header ul {
+	overflow: visible;
+}
+
+#item-actions h3{
+	font-family:arial;
+	font-weight:bold!important;
+}
+#projekti-ohje{
+	margin:0 125px 20px 0;
+}
+form#whats-new-form #whats-new-submit {
+	margin-top:12px!important;
+	margin:0!important;
+}
+.proksi-group-desc{
+	display:block;
+}
+
+.proksi-group-left .avatar {
+	float: none!important;
+	margin: 0 15px 19px 0;
+}
+.proksi-projekti-hdr #item-actions {
+	float: none!important;
+}
+.proksi-projekti-hdr{
+	float:left!important;
+	width:150px;
+	margin:0!important;
+	padding:0 20px 0 0!important;
+	min-height:100%;
+	border-bottom:none!important;
+}
+#proksi-group-content{
+	margin-left:170px;
+}
+#proksi-group-content div.item-list-tabs {
+	background: white;
+	margin: 0!important;
+	overflow: hidden;
+	border-bottom:1px solid #dfdfdf;
+	clear:none!important;
+}
+.bpfb_toolbar_container, .bpfb_controls_container {
+clear: none!important;
+padding-top: 5px;
+}
+#proksi-group-content .bpfb_form_container{
+	margin:0!important;
+	padding:0!important;
+}
+#proksi-group-content .bpfb_form_container form{
+	margin:0!important;
+	padding:0!important;
+}
+#proksi-group-content ul#activity-stream.activity-list li{
+	background-image: none;
+	padding:10px;
+	border-bottom:1px solid #ddd!important;
+	background:#fafafa;
+	border:1px solid #eaeaea;
+	margin:10px 0;
+}	
+#proksi-group-content .activity-list .activity-content .activity-header{
+	margin-left:50px!important;
+	line-height:25px!important;
+	margin:0!important;
+}
+#proksi-group-content .activity_update .activity-header{
+	min-height:50px;
+}
+#proksi-group-content .activity-list .activity-content .activity-header p{
+	margin:0 55px 0 34px;
+}
+#proksi-group-content .acomment-content, #proksi-group-content .acomment-options{
+	clear: both;
+	margin-left: 0;
+	margin-top: 20px;
+}
+#proksi-group-content .activity-content{
+	margin-left: 0!important;
+}
+#proksi-group-content #whats-new-avatar{
+	display:none;
+}
+#proksi-group-content form#whats-new-form h5, #proksi-group-content form#whats-new-form #whats-new-content {
+	padding-left:0!important;
+	margin-left:0!important;
+}
+#proksi-group-content form#whats-new-form {
+	margin:0!important;
+	padding:0!important;
+	
+}
+#proksi-group-content div.activity{
+	margin:0!important;
+}
+#proksi-group-sidebar-wrap{
+	display:block;
+}
+#proksi-group-content h2{
+	margin-bottom:5px;
+}
+#proksi-group-content h2 a, #proksi-group-content h2 a:visited{
+	text-decoration: none;
+	color: #555;
+	font-size: 18px;
+}
+#proksi-group-sidebar-wrap .projektiotsikko{
+	text-decoration:none;
+	color:#555;
+	font-size:14px;	
+}
+#proksi-group-sidebar-wrap h2{
+	margin-bottom:0!important;
+	font-size: 14px!important;
+	line-height: 14px!important;
+	margin: 0!important;
+}
+#proksi-group-sidebar-wrap h2 a, #proksi-group-sidebar-wrap h2 a:visited{
+	font-size:14px!important;
+	color:#555!important;
+}
+#proksi-group-sidebar-wrap h4{
+	margin-bottom:0!important;
+	font-size: 12px!important;
+	line-height: 14px!important;
+	margin: 10px 0 0!important;	
+}
+#proksi-group-sidebar-wrap .activity{
+	margin-top:15px;
+}
+#proksi-group-sidebar-wrap h4 a, #proksi-group-sidebar-wrap h4 a:visited{
+	text-decoration:none;
+	color:#333;
+}
+form#whats-new-form textarea {
+	min-height:50px!important;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+.ie form#whats-new-form textarea {
+  	width:95%;
+}
+#proksi-group-sidebar-wrap .generic-button a{
+	display:block;
+}
+#proksi-group-content #activity-stream {
+	margin-top:0!important;
+}
+.activity-comments{
+	margin:0!important;
+	background:#fff!important;
+}	
+.
+/*------------------------------------------------------------------------------
+	item-lists
+------------------------------------------------------------------------------*/
+.item-list .item{
+	margin-right:130px;
+}
+ul.item-list li div.item-desc {
+	width: 100%;
+}
+/*------------------------------------------------------------------------------
+	Post from site
+------------------------------------------------------------------------------*/
+.pfs-post-box{
+	position:relative!important;
+	top:0!important;
+	left:0!important;
+	
+}
+.pfs-post-box label {
+	background: transparent!important;
+	box-shadow: none!important;
+	display: block!important;
+	font-size: 13px!important;
+	padding: 4px 10px!important;
+	position: static!important;
+	line-height: 2.2em!important;
+}
+.MultiFile-wrap{
+		margin-left:0;
+}
+.pfs .submit{
+	position:static!important;
+	padding:10px 30px!important;
+}
+/*------------------------------------------------------------------------------
+	archivist
+------------------------------------------------------------------------------*/
+.archivist_wrapper{
+	margin-top:20px;
+}
+/*------------------------------------------------------------------------------
+	sign-up
+------------------------------------------------------------------------------*/
+#signup_form .submit{
+	margin-bottom:20px;
+}
+.register-section{
+	clear:none!important;
+}
+.captchaSizeDivLarge{
+	float:left;
+	margin:18px 0 0 28px;
+}
+#captcha_code{
+	margin:10px 0 0 28px;
+}
+#signup_form .submit{
+	margin-bottom:20px;
+}
+.register-section{
+	clear:none!important;
+}
+.captchaSizeDivLarge{
+	float:left;
+	margin:18px 0 0 28px;
+}
+.register-section #captcha_code{
+	margin:10px 0 0 28px;
+}
+.register-section label{
+	color:#fff;
+}
+#basic-details-section label, .editfield label{
+	color:#333;
+}
+#si_image_reg{
+	border:1px solid #888!important;
+	padding-right:0!important;
+}
+/*----------------------------------------------*/
+/*              members
+/*----------------------------------------------*/
+img.friendship-icon{
+	position: relative;
+	top: 3px;
+	left: -5px;
+}
+.bp-widget #members-list img, .bp-widget #admins-list img{
+	width:40px;
+	height:40px;
+}
+.bp-widget #members-list li, .bp-widget #admins-list li{
+	padding:2px;
+	line-height:40px;
+}
+.bp-widget #members-list .button, .bp-widget #admins-list .button{
+	line-height:40px;
+}
+.bp-widget #members-list li:nth-child(odd), .bp-widget #admins-list li:nth-child(odd){
+	background:#efefef;
+}
+.bp-widget #members-list li:nth-child(even), .bp-widget #admins-list li:nth-child(even){
+	background:#fff;
+}
+/*-------------------------------------------------
+			notification widget
+-------------------------------------------------*/
+.clear-widget-notifications{
+	display:none;
+}
+.notification-count-in-title{
+	background:#FF7F00;
+	color:#fff;
+	margin-left:10px;
+	padding:1px 5px;
+	position:relative;
+	bottom:2px;
+	font-size:11px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.widget_bpdev_bpnotification_widget .widgettitle{
+	padding-bottom:3px!important;
+}
+.bp-notification-list{
+	list-style-image: url('/images/bullet2.gif');
+}
+.bp-notification-list li{
+	margin-left:5px;
+}
+/*------------------------------------------------
+			AIHEPANKKI
+-------------------------------------------------*/
+.aihepankki{
+	overflow:visible!important;
+}
+#avaa_postbox{
+	padding:10px;
+	display:block;
+	font-size:18px;
+	background:#91d835;
+	text-decoration:none;
+	color:#fff!important;
+}
+#postbox{
+	padding:40px;
+	display:block;
+	font-size:12px;
+	background:#f5f5f5;
+	margin-bottom:10px;
+	text-decoration:none;
+}
+#postbox label{
+	font-weight:bold;	
+	display:block;
+}
+#postbox small{
+	color:#888;
+	display:block;
+	margin-right:20px;
+	font-size:11px;
+}
+.aihepostErrors{
+	display:block!important;
+}
+.aihe-valikko{
+	margin-top:20px;
+	margin-bottom:10px!important;
+	display:block;
+	text-align:center;
+}
+.aihe-valikko a{
+	text-decoration:none;
+}
+.aihe-valikko a:hover{
+	text-decoration:underline;
+}
+.aihe-valikko ul li{
+	list-style:none!important;
+}
+.aihe-valikko ul li:first-child{
+	margin-left:0!important;
+}
+.aiherivi a{
+	text-decoration:none;
+}
+.aiherivi:hover{
+	background:#eaeaea;
+	cursor:pointer;
+}
+select#ala{
+	margin-bottom:10px;
+	padding-left:0!important;
+}
+.aihepankki-vasen{
+	float:left; 
+	width:65%;
+}
+.aihepankki-oikea{
+	float:right;
+	width:33%;
+	text-align:right;
+}
+#comments h3{
+	font-family:Arial, Tahoma, Verdana, sans-serif;
+}
+.ap-otsikko{
+	text-transform:uppercase;
+	display:block;
+	font-size: 10px!important;
+	line-height: 12px;
+	text-transform: uppercase;
+	color: #888!important;
+}
+.ap-organisaatio{
+	display:block;
+}
+.rivi{
+	display:block;
+	clear:both;
+	margin:10px 0;
+}
+.rivi div{
+	display:block;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+.puoli div{
+	width:50%;
+	float:left;
+}
+.single-aihe .post-content, .single-aihe #comments{
+	margin-left:0;
+	padding:20px;
+}
+.single-aihe .children{
+	margin:15px 0 15px 20px!important;
+}
+.aihe-organisaatio{
+	margin:10px 0!important;
+}
+.ap-lomake-osio{
+	margin-bottom:20px;
+	padding-bottom:20px;
+	border-bottom:1px solid #ccc;
+}
+.single-aihe .entry{
+	width:66%;
+	float:left;
+	margin-bottom:20px;
+	padding-right:20px;
+}
+.varaus *, .single-aihe *{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+.aiheen-yhteystiedot{
+	float:left;
+	background:#f0f0f0;
+	padding:20px;
+	margin-bottom:20px;
+	width:34%;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+.aiheen-lisatiedot p{
+	margin-right:20px;
+}
+.aiheenvaraus{
+	width:33%;
+	padding:1px 20px 0 0;
+}
+.varausnappi, .aihepost #submit{
+	-webkit-appearance: none;
+	background: #91d835!important;
+	font-size: 18px!important;
+	padding: 10px 20px!important;
+	font-family: 'Lucida Grande', Arial, Tahoma, Verdana, sans-serif!important;
+	font-weight: bold!important;
+	margin:20px 20px 0 0;
+	width:100%;
+	display:block;
+	color:#fff!important;
+	margin-right:20px;
+	font-size:16px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:0px solid #dcdcdc;
+	padding:10px 20px;
+	text-decoration:none;
+	background:-moz-linear-gradient( center top, #91d835 5%, #91d835 100% );
+	background:-ms-linear-gradient( top, #91d835 5%, #91d835 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#91d835', endColorstr='#91d835');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #91d835), color-stop(100%, #91d835) );
+	background-color:#91d835;
+	text-shadow:0px 0px 0px #ffffff;
+ 	-webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+ 	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+ 	box-shadow:inset 0px 0px 0px 0px #ffffff;
+}
+.css_btn_class:hover {
+	background:#81e825;
+}
+.css_btn_class:active {
+	position:relative;
+	top:1px;	
+}
+.varausinfo{
+	color:#fff;
+	padding:20px;
+	float:right;
+	position: relative;
+	width: 66%;
+	background: #66D6D6;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.varausinfo:after {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 5px 15px 5px 0;
+	border-color: transparent #66D6D6;
+	display: block;
+	width: 0;
+	z-index: 1;
+	left: -15px;
+	top: 36px;
+}
+.errorviesti{
+	display:block;
+	color:#F00;
+}
+/*---------------------------------------------------
+			FACEBOOK
+---------------------------------------------------*/	
+.fbLoginButton{
+	text-align:left!important;
+}
+.kirjautuminen .widget_autoconnect_premium div{
+	text-align:left!important;	
+}
+/*---------------------------------------------------
+			NAPIT
+----------------------------------------------------*/
+
+button,
+a.button,
+input[type=submit],
+input[type=button],
+input[type=reset],
+ul.button-nav li a,
+div.generic-button a,
+.comment-reply-link {
+	background: #888;
+	color: #f0f0f0!important;
+	font-size: 11px;
+	border: 1px solid #ccc;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	cursor: pointer;
+	outline: none;
+	padding: 4px 8px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 14px;
+}
+button:hover,
+a.button:hover,
+a.button:focus,
+input[type=submit]:hover,
+input[type=button]:hover,
+input[type=reset]:hover,
+ul.button-nav li a:hover,
+ul.button-nav li.current a,
+div.generic-button a:hover,
+.comment-reply-link:hover {
+	background: #999;
+	color: white;
+	border: 1px solid #ccc;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	cursor: pointer;
+	outline: none;
+	padding: 4px 8px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 14px;
+}
+button,
+a.button,
+input[type=submit],
+input[type=button],
+input[type=reset],
+ul.button-nav li a,
+div.generic-button a,
+.comment-reply-link {
+	background: #888;
+	color: #f0f0f0!important;
+	font-size: 11px;
+	border: 1px solid #ccc;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	cursor: pointer;
+	outline: none;
+	padding: 4px 8px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 14px;
+}
+button:hover,
+a.button:hover,
+a.button:focus,
+input[type=submit]:hover,
+input[type=button]:hover,
+input[type=reset]:hover,
+ul.button-nav li a:hover,
+ul.button-nav li.current a,
+div.generic-button a:hover,
+.comment-reply-link:hover {
+	background: #999;
+	color: white;
+	border: 1px solid #ccc;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	cursor: pointer;
+	outline: none;
+	padding: 4px 8px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 14px;
+}
+
+.ie input[type=submit],
+.ie #sidebar-wp-submit{
+	color:#555!important;
+}
+div.activity-meta a{
+	line-height:14px!important;
+}
+a.bp-primary-action span, #reply-title small a span {
+background:#555;
+}
+.kirjaudu{
+    height: 60px;
+    background: #ddd;
+    line-height: 60px;
+    text-align: center;
+    margin: 10px -20px 10px;
+    /* padding: 20px; */
+    display: block;
+    /* position: absolute; */
+	font-size:16px;
+	position:relative;
+	color:#555;
+}
+.kirjaudu span{
+	position:absolute;
+	right:-10px;
+	bottom:20px;
+	background:url('http://proksi.metropolia.fi/images/arrow.png') no-repeat;
+	height:60px;
+	width:60px;
+}
+
+
+/*---------------------------------------------------------
+			Post From Site
+----------------------------------------------------------*/
+.pfs-post-box input[type="text"], .pfs-post-box input[type="email"], .pfs-post-box input[type="button"], .pfs-post-box textarea, .pfs-post-box select {
+	text-indent: 0!important;
+}
+#pfs-post-box-Lisuusiaihe{
+}
+/*
+select{
+	padding-left:10px!important;
+}*/
+
+/*-------------------------------------------------------------
+			invite-anyone
+---------------------------------------------------------------*/
+#send-invite-form .submit{
+	text-align:right;
+	margin-bottom:40px;
+}
+#invite-anyone-group-list li {
+	float:none!important;
+	width:100%!important;
+}
+/*-------------------------------------------------------------
+			profiili
+---------------------------------------------------------------*/
+.rooli{
+	display:block;
+	margin-top: -5px;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+.activity-profiili{
+	display:block;
+	float:right;
+	position:relative;
+	bottom:5px;
+	color:#888;
+}
+.cubepoints_buddypress{
+	display:block!important;
+	border:none!important;
+	padding:0!important;
+	margin-top:10px!important;
+	font-size:18px!important;
+}
+.proksi-user-info{
+	margin-top:5px!important
+}
+.linkedin{
+	display:block;
+	width:100%;
+	height:50px;
+}
+.linkedin a, .linkedin a:visited{
+	height:37px;
+	float:left;
+	line-height:37px;
+	font-size:14px;
+	text-decoration:none;
+	color:#555;
+	margin-right:3px;
+	color:#007BB6;
+}
+.linkedin a:hover{
+	color:#888;
+}
+#item-buttons{
+
+}
+#item-buttons a{
+	font-size:12px;
+	float:none;
+}
+
+/*________________________________________________________________
+FONT-FACE
+------------------------------------------------------------------*/
+@font-face {
+	font-family: 'proksifont';
+	src:url('proksifont/fonts/proksifont.eot');
+	src:url('proksifont/fonts/proksifont.eot?#iefix') format('embedded-opentype'),
+		url('proksifont/fonts/proksifont.woff') format('woff'),
+		url('proksifont/fonts/proksifont.ttf') format('truetype'),
+		url('proksifont/fonts/proksifont.svg#proksifont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'proksifont';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+div.friendship-button, div#send-private-message, .icon-search, .icon-tree, .icon-envelope, .icon-pencil, .icon-users {
+	font-family: 'proksifont'!important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+div.friendship-button, div#send-private-message{
+	background:#888;
+	color:#fff;
+	height:25px;
+	margin-top:0!important;
+	line-height:25px;
+	padding-left:10px;
+}
+div.friendship-button:hover, div#send-private-message:hover{
+	background:#999;
+}
+a.friendship-button, #send-private-message a{
+	font-family:Arial, Helvetica, sans-serif;
+	border:none!important;
+	padding-top:0!important;
+	padding-bottom:0!important;
+	margin:0!important;
+	line-height:25px!important;
+	height:25px!important;
+	background:transparent!important;
+}
+.icon-search:before {
+	content: "\21";
+}
+.icon-tree:before {
+	content: "\23";
+}
+div#send-private-message:before, .icon-envelope:before {
+	content: "\26";
+}
+.icon-pencil:before {
+	content: "\27";
+}
+div.friendship-button:before, .icon-users:before {
+	content: "\24";
+}
+#mobilevalikko{
+	position:absolute;
+	top:10px;
+	right:10px;
+	z-index:1111;
+	display:none;
+	width:60px;
+	height:60px;
+	margin:-10px -10px 0 0;
+	border-left:1px solid #ccc;
+	cursor:pointer;
+}
+
+/*--------------------------------------------------------------
+Hello, this is the BuddyPress Responsive theme stylesheet
+
+----------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - iPad
+	1.1 - Landscape
+	1.2 - Portrait
+2.0 - Smartphone
+3.0 - iPhone
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 1120px) {
+	#content{
+		padding:0 10px;
+		box-sizing:border-box;
+	}
+	div#sidebar{
+		display:block;
+		margin-right:10px;
+		width:265px;
+		margin-left:-275px;
+	}
+	#proksi_logo {
+		z-index:11111!important;
+	}
+
+	#metropolia_logo{
+		margin-right:30px;
+		margin-top:10px;
+		height:25px;
+		position:absolute;
+		right:10px;
+	}
+	
+}
+@media only screen and (min-width: 980px) {
+	div#sidebar{
+		display:block;
+	}
+}
+/*--------------------------------------------------------------
+	1.1 - iPad Landscape
+--------------------------------------------------------------*/
+
+
+@media only screen and (max-width: 980px) {
+	html{
+		min-width:320px;
+	}
+	#content{
+		padding:10px;
+		box-sizing:border-box;
+	}
+	.header_container, #container, #navigation{
+		min-width:0;
+	}
+	#header{
+		position:relative!important;
+		top:0;
+	}
+	.my-groups-list{
+		width:100%!important;
+		margin-left:0!important;
+		margin-right:0!important;
+	}
+	.my-groups-list li{
+		margin-left:-20px!important;
+		margin-right:-20px!important;
+	}
+
+	html {
+		background-color: #eaeaea;
+	}
+	body {
+		margin-top: -28px !important;
+		background: #eaeaea;
+	}
+	#wp-admin-bar, #wpadminbar {
+		display: none;
+	}
+	div#container{
+		border:none;
+		overflow:visible;
+		margin-top:0!important;
+		position:static;
+	}
+	div#content .padder {
+		margin: 0!important;
+		width: auto;
+		float: none;
+		border: none;
+	}
+
+	
+	#nav{
+		margin-left:150px!important;
+		margin-right:0;
+		border-left:none;
+	}
+		
+	#nav li{
+		margin-right:10px;
+	}
+
+	#nav li a{
+		width:100%!important;
+		padding:0!important;
+		font-size:14px;
+		border-right:none;
+	}
+	#proksi_logo {
+		width:16.66666666666667%;
+		position:absolute;
+		left:5px;
+		z-index:11111!important;
+	}
+
+	#metropolia_logo{
+		margin-right:70px;
+		margin-top:10px;
+		height:25px;
+	}
+	
+	#activity-filter-select{
+		line-height:42px;
+	}
+
+	
+	div#content div.padder {
+		border-right: none!important;
+	}
+	div#sidebar {
+		border-left: none;
+		position:absolute;
+		right:-11px;
+		top:51px;
+		height:100%;
+		display:none;
+		padding-bottom:-50px;
+		border-left: 1px solid #cacaca;
+	}
+	#mobilevalikko{
+		display:block;
+	}
+	
+	li.own_groups_links{
+		display:inline-block!important;
+	}
+	#nav li.selected a, #nav > li.current-menu-item a, #nav > li.current_page_item a, #nav > li.current_page_ancestor a {
+		background: #fff;
+	}
+	.my-groups-list, .my-groups-list li{
+		width:100%!important;
+	}
+	
+	/*.activity-type-tabs li, .item-list-tabs li{
+		display:inline;
+		width:33.3%;
+		margin:0!important;
+
+	}*/
+	.activity-type-tabs li a, .item-list-tabs li a{
+		padding-left:20px!important;		
+	}	
+	li.feed{
+		text-align:left!important;
+		margin:5px 0 0 20px!important;
+	}
+	#group-dir-search {
+		position: static!important;
+	}
+	/* ------------- PROJEKTIT -------------  */
+	#projekti-ohje{
+		margin-right:0;
+	}
+	#group-dir-search {
+		position: relative;
+		top: 25px;
+	}
+	.mini{
+		border:none!important;
+		margin-bottom:4px;
+	}
+	
+	.footer-left{
+		margin-right:0;
+	}
+	/*---------etusivu ------------*/
+	#proksi-etusivu-header{
+		margin-top:0;
+	}
+	.proksi-etusivu-header-wrap{
+		padding:50px 20px;
+
+	}
+}
+@media only screen and (max-width:830px) {
+	.otsake-info{
+		padding-top:20px;
+	}
+		/*---etusivu-----*/
+	.slogan{
+		font-family: 'Droid Serif', serif;
+		font-size:30px;
+		line-height:30px;
+	}
+	.proksi-etusivu-header-wrap .slogan-info{
+		font-size:18px;
+		line-height:22px;
+	}
+}
+@media only screen and (max-width:750px) {
+	#nav li.selected a, #nav > li.current-menu-item a, #nav > li.current_page_item a, #nav > li.current_page_ancestor a {
+		background: transparent;
+	}
+	.current_page_item a{
+		margin-right:none;
+	}
+
+	#proksi_logo{
+		width:131px;
+	}
+	#header{
+		margin-bottom:60px;
+		border-bottom:none;
+	}
+	#navigation{
+		height:60px;
+	}
+	#nav{
+		position: relative;
+		top: 60px;
+		margin:0 20px!important;
+	}
+	#metropolia_logo{
+		margin-right:70px;
+		margin-top:10px;
+		height:25px;
+	}
+	#header{
+		margin-bottom:61px;
+	}
+	div#content{
+		padding-top:0!important;
+	}
+	.projektikorttiwrap {
+		width: 33%!important;
+	}
+	.proksi-etusivu-header-wrap{
+		padding:50px 20px;
+
+	}
+	.tyypit{
+		max-width:50%;
+	}
+	
+}
+/*--------------------------------------------------------------
+1.2 - iPad Portrait
+--------------------------------------------------------------*/
+@media only screen and (max-width: 640px) {
+	div.activity-content{
+		margin-left:0!important;
+	}
+
+	.activity-avatar{
+		margin:0 10px 10px 0;
+	}
+	.mini .activity-header{
+		margin-left:65px;
+	}
+	.activity-header, .activity-inner{
+		margin-right:0;
+		border-bottom:none!important;
+	}
+	.friendship_created .activity-content .avatar {
+		position: absolute;
+		left: 25px;
+		top: 10px;
+	}
+	div.dir-search {
+		float: none;
+		margin: 1.25em 0 0;
+	}
+	ul.item-list li div.action {
+		padding-left: 64px;
+		position: relative;
+		right: auto;
+		text-align: left;
+		top: 1em;
+		margin-bottom: 1.25em;
+	}
+	/* ------------- PROJEKTIT -------------  */
+	#group-dir-search {
+		position: static!important;
+	}
+	#groups-list .item{
+		margin-right:0;
+	}
+	.projektikorttiwrap {
+		width: 50%!important;
+		margin-top:20px;
+	}
+	.projektikortti, .projektikortti-footer{
+		margin-right:20px;
+		margin-left:20px;
+	}
+	#groups-dir-list{
+		margin-left:0;
+	}
+	/*-----etusivu--------*/
+	.proksi-etusivu-header-wrap {
+		padding: 30px 20px;
+	}
+	.tyypit{
+		max-width:100%;
+		float:none;
+		margin-left:0;
+	}
+	.slogan{
+		margin-top:20px;
+	}
+	.uudet-aiheet-oikea{
+		float:none;
+		margin-left:0;
+		margin-bottom:20px;
+		max-width:100%;
+	}
+	.uudet-aiheet-oikea p{
+		display:none;
+	}
+	.uudet-aiheet{
+		margin:0;
+		padding:0;
+	}
+
+/*--------------------------------------------------------------
+2.0 - Smartphone (any)
+--------------------------------------------------------------*/
+@media screen and (max-device-width: 540px), screen and (-webkit-min-device-pixel-ratio: 2) {
+	-webkit-text-size-adjust: none;
+}
+
+@media screen and (max-width: 540px) {
+	.projektikorttiwrap {
+		width:100%!important;
+		max-width:285px;
+	}
+	span.activity{
+		display:none;
+	}
+	.item-list .item{
+		margin-right:0;
+	}
+	div#item-header div#item-header-content {
+		margin-left: 0;
+	}
+	h1{
+		font-size:22px!important;
+	}
+	h2{
+		font-size:18px!important;
+	}
+	div#item-header div#item-header-avatar a img.avatar{
+		max-width:20%!important;
+		height:auto!important;
+	}
+	div#item-header div#item-actions{
+		float:none!important;
+	}
+	div#item-header div#item-actions h3{
+		float:left!important;
+	}
+	body {
+		width: 100%;
+		margin: 0;
+	}
+	div#container{
+		border:none;
+	}
+	div.item-list-tabs ul li {
+		float: none;
+		margin: 0.3em 0.6em;
+		background:none;
+	}
+	div.item-list-tabs ul li.last {
+		float: none;
+		margin: 0.3em 0.6em;
+	}
+	div#subnav.item-list-tabs ul li.last {
+		margin-top: 1em;
+	}
+	div.item-list-tabs ul li.selected,
+	div.item-list-tabs ul li.current {
+		margin: 0.3em 0.6em;
+	}
+	div.item-list-tabs ul li.selected a,
+	div.item-list-tabs ul li.current a {
+		background: #eee;
+		font-weight: bold;
+	}
+	div.item-list-tabs {
+		background: none;
+	}
+	div.item-list-tabs ul li:first-child {
+		margin: 0.6em 0.6em 0.5em 0.6em;
+	}
+	div.item-list-tabs ul li a,
+	div.item-list-tabs ul li span {
+		padding: 0.3em;
+	}
+	div#subnav ul {
+		padding-top: 0.6em;
+	}
+	div.pagination {
+		padding: 0.6em;
+	}
+	div.item-list-tabs ul {
+		border-top: 1px solid #EAEAEA;
+		padding-top: 0;
+	}
+	div.item-list-tabs ul li {
+		margin-top: 0;
+	}
+	form.standard-form #basic-details-section,
+	form.standard-form #blog-details-section,
+	form.standard-form #profile-details-section {
+		float: none;
+		width: 100%;
+	}
+	#groups-list .item-desc{
+		display:none;
+	}
+	li.feed{
+		display:none!important;
+		
+	}
+}
+@media only screen and (max-width: 500px) {
+	/*#nav{
+		background:#ddd;
+		border:3px solid #DDD;
+	}
+	#nav li{
+		width:50%;
+	}
+	#nav li a{
+		border:2px solid #ddd!important;
+		background:#eaeaea;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box; /* Firefox */
+	/*	-webkit-box-sizing:border-box; /* Safari */
+	/*}
+	#nav li.selected a, #nav > li.current-menu-item a, #nav > li.current_page_item a, #nav > li.current_page_ancestor a {
+		background:#fff;
+	}*/
+
+	.comment-avatar-box{
+		width:30px!important;
+	}
+	.comment-avatar-box img{
+		width:30px;
+		height:auto;
+	}
+	ul.children{
+		margin-left:45px;
+	}
+	div.activity-comments{
+		margin-left:0!important;
+	}
+	.aihepankki-vasen{
+		width:100%!important;
+		display:block!important;
+		float:none!important;
+	}
+	.aihepankki-oikea{
+		display:none;
+	}
+
+}
+
+/*--------------------------------------------------------------
+3.0 - iPhone
+--------------------------------------------------------------*/
+@media only screen and (max-width: 430px) {
+	#nav li a {
+		font-size:12px;
+	}
+	.single-aihe .post-content, .single-aihe #comments{
+		padding:0px;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+
+	#nav{
+		height:60px;
+		overflow:hidden;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	#activity-all, #activity-all .selected{
+		margin:0!important;
+	}
+
+
+	form#groups-directory-form h3 a {
+		display: block;
+		margin-top: 0.6em;
+	}
+	div.post div.author-box,
+	div.comment-avatar-box {
+		display: none;
+	}
+	div.post div.post-content,
+	div.comment-content {
+		margin-left: 0px;
+	}
+	form#whats-new-form div#whats-new-avatar {
+		display:none;
+	}
+	form#whats-new-form h5 {
+		margin: 0 0 0 0px;
+	}
+	form#whats-new-form #whats-new-content {
+		margin-left: 0px;
+		padding-left: 0px;
+	}
+	/*ul#activity-stream.item-list li div.activity-avatar {
+		display: none;
+	}*/
+	body.activity-permalink .activity-list li .activity-content {
+		margin-left: 0;
+	}
+	body.activity-permalink .activity-list li.mini .activity-meta {
+		left: 0;
+	}
+}

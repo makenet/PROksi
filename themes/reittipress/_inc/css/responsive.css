@@ -1,0 +1,427 @@
+/*--------------------------------------------------------------
+Hello, this is the BuddyPress Responsive theme stylesheet
+
+----------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - iPad
+	1.1 - Landscape
+	1.2 - Portrait
+2.0 - Smartphone
+3.0 - iPhone
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.1 - iPad Landscape
+--------------------------------------------------------------*/
+
+
+@media only screen and (max-width: 980px) {
+	html{
+		min-width:320px;
+	}
+	#content{
+		padding:10px;
+		box-sizing:border-box;
+	}
+	.otsake {
+		height:170px;
+		background-position:center;
+	}
+	.header_container, #container, #navigation{
+		min-width:0;
+	}
+	#header{
+		position:relative!important;
+		top:0;
+	}
+	.my-groups-list{
+		width:100%!important;
+		margin-left:0!important;
+		margin-right:0!important;
+	}
+	.my-groups-list li{
+		margin-left:-20px!important;
+		margin-right:-20px!important;
+	}
+
+	html {
+		background-color: #eaeaea;
+	}
+	body {
+		margin-top: -28px !important;
+		background: #eaeaea;
+	}
+	#wp-admin-bar, #wpadminbar {
+		display: none;
+	}
+	div#container{
+		border:none;
+		overflow:hidden;
+		margin-top:0!important;
+	}
+	div#content .padder {
+		margin-right: 0;
+		width: auto;
+		float: none;
+		border: none;
+	}
+
+	
+	#nav{
+		margin-left:150px!important;
+		margin-right:0;
+		border-left:none;
+	}
+		
+	#nav li{
+		width:19.99999999995935%;
+	}
+	#nav li:nth-child(1){
+		display:none;
+	}
+	#nav li a{
+		width:100%!important;
+		padding:0!important;
+		font-size:14px;
+		border-right:none;
+	}
+	#proksi_logo {
+		width:16.66666666666667%;
+		position:absolute;
+		left:5px;
+		z-index:11111!important;
+	}
+
+	#metropolia_logo{
+		margin-right:30px;
+		margin-top:75px;
+		height:25px;
+	}
+	
+	#activity-filter-select{
+		line-height:42px;
+	}
+
+	
+	div#content div.padder {
+		border-right: none!important;
+	}
+	div#sidebar {
+		float:none;
+		margin-left:0!important;
+		width: 100%;
+		border-left: none;
+		clear: both;
+	}
+	li.own_groups_links{
+		display:inline-block!important;
+	}
+	#nav li.selected a, #nav > li.current-menu-item a, #nav > li.current_page_item a, #nav > li.current_page_ancestor a {
+		background: #fff;
+	}
+	.my-groups-list, .my-groups-list li{
+		width:100%!important;
+	}
+	
+	.activity-type-tabs li, .item-list-tabs li{
+		display:inline;
+		width:33.3%;
+		margin:0!important;
+
+	}
+	.activity-type-tabs li a, .item-list-tabs li a{
+		padding-left:20px!important;		
+	}	
+	li.feed{
+		text-align:left!important;
+		margin:5px 0 0 20px!important;
+	}
+	/* ------------- PROJEKTIT -------------  */
+	#projekti-ohje{
+		margin-right:0;
+	}
+	#group-dir-search {
+		position: relative;
+		top: 25px;
+	}
+	.mini{
+		border:none!important;
+		margin-bottom:4px;
+	}
+}
+@media only screen and (max-width:800px) {
+	#content .padder{
+		margin:0!important;
+	}
+}
+@media only screen and (max-width:750px) {
+	#nav li.selected a, #nav > li.current-menu-item a, #nav > li.current_page_item a, #nav > li.current_page_ancestor a {
+		background: transparent;
+	}
+	.current_page_item a{
+		margin-right:none;
+	}
+	.otsake {
+		display:none;
+	}
+	#proksi_logo{
+		width:131px;
+	}
+	#header{
+		margin-bottom:60px;
+		border-bottom:none;
+	}
+	#navigation{
+		height:60px;
+	}
+	#nav{
+		position: relative;
+		top: 60px;
+		margin-left: 0!important;
+	}
+	#metropolia_logo{
+		margin-right:20px;
+		margin-top:10px;
+		height:25px;
+	}
+	#header{
+		margin-bottom:61px;
+	}
+
+}
+/*--------------------------------------------------------------
+1.2 - iPad Portrait
+--------------------------------------------------------------*/
+@media only screen and (max-width: 640px) {
+	h3{
+		text-align:center;
+	}
+	div.activity-content{
+		margin-left:0!important;
+	}
+
+	.activity-avatar{
+		margin:0 10px 10px 0;
+	}
+	.mini .activity-header{
+		margin-left:65px;
+	}
+	.activity-header, .activity-inner{
+		margin-right:0;
+		border-bottom:none!important;
+	}
+	.friendship_created .activity-content .avatar {
+		position: absolute;
+		left: 25px;
+		top: 10px;
+	}
+	div.dir-search {
+		float: none;
+		margin: 1.25em 0 0;
+	}
+	ul.item-list li div.action {
+		padding-left: 64px;
+		position: relative;
+		right: auto;
+		text-align: left;
+		top: 1em;
+		margin-bottom: 1.25em;
+	}
+	/* ------------- PROJEKTIT -------------  */
+	#group-dir-search {
+		position: static!important;
+	}
+	#groups-list .item{
+		margin-right:0;
+	}
+}
+
+
+/*--------------------------------------------------------------
+2.0 - Smartphone (any)
+--------------------------------------------------------------*/
+@media screen and (max-device-width: 540px), screen and (-webkit-min-device-pixel-ratio: 2) {
+	-webkit-text-size-adjust: none;
+}
+
+@media screen and (max-width: 540px) {
+	span.activity{
+		display:none;
+	}
+	.item-list .item{
+		margin-right:0;
+	}
+	div#item-header div#item-header-content {
+		margin-left: 0;
+	}
+	h1{
+		font-size:22px!important;
+	}
+	h2{
+		font-size:18px!important;
+	}
+	div#item-header div#item-header-avatar a img.avatar{
+		max-width:20%!important;
+		height:auto!important;
+	}
+	div#item-header div#item-actions{
+		float:none!important;
+	}
+	div#item-header div#item-actions h3{
+		float:left!important;
+	}
+	body {
+		width: 100%;
+		margin: 0;
+	}
+	div#container{
+		border:none;
+	}
+	div.item-list-tabs ul li {
+		float: none;
+		margin: 0.3em 0.6em;
+		background:none;
+	}
+	div.item-list-tabs ul li.last {
+		float: none;
+		margin: 0.3em 0.6em;
+	}
+	div#subnav.item-list-tabs ul li.last {
+		margin-top: 1em;
+	}
+	div.item-list-tabs ul li.selected,
+	div.item-list-tabs ul li.current {
+		margin: 0.3em 0.6em;
+	}
+	div.item-list-tabs ul li.selected a,
+	div.item-list-tabs ul li.current a {
+		background: #eee;
+		font-weight: bold;
+	}
+	div.item-list-tabs {
+		background: none;
+	}
+	div.item-list-tabs ul li:first-child {
+		margin: 0.6em 0.6em 0.5em 0.6em;
+	}
+	div.item-list-tabs ul li a,
+	div.item-list-tabs ul li span {
+		padding: 0.3em;
+	}
+	div#subnav ul {
+		padding-top: 0.6em;
+	}
+	div.pagination {
+		padding: 0.6em;
+	}
+	div.item-list-tabs ul {
+		border-top: 1px solid #EAEAEA;
+		padding-top: 0;
+	}
+	div.item-list-tabs ul li {
+		margin-top: 0;
+	}
+	form.standard-form #basic-details-section,
+	form.standard-form #blog-details-section,
+	form.standard-form #profile-details-section {
+		float: none;
+		width: 100%;
+	}
+	#groups-list .item-desc{
+		display:none;
+	}
+	li.feed{
+		display:none!important;
+		
+	}
+}
+@media only screen and (max-width: 500px) {
+	#nav{
+		background:#ddd;
+		border:3px solid #DDD;
+	}
+	#nav li{
+		width:50%;
+	}
+	#nav li a{
+		border:2px solid #ddd!important;
+		background:#eaeaea;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box; /* Firefox */
+		-webkit-box-sizing:border-box; /* Safari */
+	}
+	#nav li.selected a, #nav > li.current-menu-item a, #nav > li.current_page_item a, #nav > li.current_page_ancestor a {
+		background:#fff;
+	}
+	#header{
+		margin-bottom:180px;
+		-webkit-box-shadow:none;
+		-moz-box-shadow:none;
+		box-shadow:none;
+	}
+	.comment-avatar-box{
+		width:30px!important;
+	}
+	.comment-avatar-box img{
+		width:30px;
+		height:auto;
+	}
+	ul.children{
+		margin-left:45px;
+	}
+	div.activity-comments{
+		margin-left:0!important;
+	}
+	.aihepankki-vasen{
+		width:100%!important;
+		display:block!important;
+		float:none!important;
+	}
+	.aihepankki-oikea{
+		display:none;
+	}
+
+}
+
+/*--------------------------------------------------------------
+3.0 - iPhone
+--------------------------------------------------------------*/
+@media only screen and (max-width: 320px) {
+	#activity-all, #activity-all .selected{
+		margin:0!important;
+	}
+
+
+	form#groups-directory-form h3 a {
+		display: block;
+		margin-top: 0.6em;
+	}
+	div.post div.author-box,
+	div.comment-avatar-box {
+		display: none;
+	}
+	div.post div.post-content,
+	div.comment-content {
+		margin-left: 0px;
+	}
+	form#whats-new-form div#whats-new-avatar {
+		display:none;
+	}
+	form#whats-new-form h5 {
+		margin: 0 0 0 0px;
+	}
+	form#whats-new-form #whats-new-content {
+		margin-left: 0px;
+		padding-left: 0px;
+	}
+	/*ul#activity-stream.item-list li div.activity-avatar {
+		display: none;
+	}*/
+	body.activity-permalink .activity-list li .activity-content {
+		margin-left: 0;
+	}
+	body.activity-permalink .activity-list li.mini .activity-meta {
+		left: 0;
+	}
+}
